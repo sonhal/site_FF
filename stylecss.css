@@ -1,0 +1,125 @@
+
+@font-face {
+    font-family: 'vegan_style_personal_useRg';
+    src: url('vegan_style_personal_use-webfont.woff2') format('woff2'),
+         url('vegan_style_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemon_jelly_personal_useRg';
+    src: url('lemon_jelly_personal_use.woff2') format('woff2'),
+         url('lemon_jelly_personal_use.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+   }
+   
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+      "hd  hd  hd  hd  hd  hd   hd   hd   hd   hd   hd  hd"
+      "sd sd main main main main main main main main main main"
+      "ft  ft  ft  ft   ft   ft   ft   ft   ft  ft  ft ft";
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    background-image: url(resources/tennis-image-hero.jpg);
+    grid-area: hd;
+    height: 400px;
+    background-size: cover;
+    box-shadow: 0 2px 4px 0 black;
+    z-index: 1;
+}
+
+.intro {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+.intro h1 {
+    font-family: lemon_jelly_personal_useRg;
+    font-size: 7em;
+    margin-top: 10%;
+    text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 2px 2px 4px grey;
+    color: #6295db;
+}
+
+
+.content {
+    margin: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-area: main;
+}
+
+.content .content-text {
+    grid-column: span 2;
+}
+
+.content .content-img {
+    grid-column: span 1;
+}
+
+.content  .about {
+    grid-column: span 2;
+}
+
+.sidebar {
+    grid-area: sd;
+
+}
+
+.sidebar ul {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(50px, auto);
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin: 3px;
+    list-style: none;
+}
+
+
+.sidebar ul li a {
+    font-family: lemon_jelly_personal_useRg;
+    font-size: 2em;
+    color: black;
+    display: block;
+    background-color: darkgrey;
+    text-decoration: none;
+    width:100%;
+    height:100%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.sidebar ul li a:hover {
+    background-color: lightgrey;
+}
+
+.footer {
+    background-color: #6295db;
+    grid-area: ft;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
